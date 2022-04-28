@@ -42,3 +42,9 @@ SET
   is_completed = '1'
 WHERE
   id = 1;
+
+/* Delete one by id */
+DELETE FROM
+  todos
+WHERE
+  id = 1;
