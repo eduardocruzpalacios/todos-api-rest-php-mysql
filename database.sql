@@ -26,3 +26,9 @@ VALUES
     'Lorem ipsum...',
     '0'
   );
+
+/* Read all */
+SELECT
+  *
+FROM
+  todos;
