@@ -32,3 +32,13 @@ SELECT
   *
 FROM
   todos;
+
+/* Update one by id */
+UPDATE
+  todos
+SET
+  title = 'test updated',
+  content = 'content updated',
+  is_completed = '1'
+WHERE
+  id = 1;
