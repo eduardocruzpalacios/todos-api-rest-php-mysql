@@ -9,3 +9,20 @@ CREATE TABLE todos (
   is_completed BOOLEAN NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE = InnoDB;
+
+/* CRUD QUERIES */
+/* Create one */
+INSERT INTO
+  todos (
+    id,
+    title,
+    content,
+    is_completed
+  )
+VALUES
+  (
+    NULL,
+    'test',
+    'Lorem ipsum...',
+    '0'
+  );
