@@ -73,4 +73,31 @@ class Todo
       header('HTTP/1.1 500 Internal Server Error');
     }
   }
+
+  public static function update($id)
+  {
+    $todo = json_decode(file_get_contents('php://input'), true);
+
+    global $connection;
+
+    $query  = 'UPDATE todos SET title = ?, content = ?, is_completed = ? WHERE id = ?';
+
+    $stmt = $connection->prepare($query);
+    
+    $stmt->bind_param(
+      'ssii',
+      $todo['title'],
+      $todo['content'],
+      $todo['is_completed'],
+      $id
+    );
+
+    $result = $stmt->execute();
+
+    if ($result) {
+      header('HTTP/1.1 200 OK');
+    } else {
+      header('HTTP/1.1 500 Internal Server Error');
+    }
+  }
 }
