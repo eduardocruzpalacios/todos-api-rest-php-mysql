@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "968dddcd-2853-4063-acf8-370f6223fb65",
+		"name": "API REST todos PHP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/todos-api-rest-php/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/todos-api-rest-php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"todos-api-rest-php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/todos-api-rest-php/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"POST HTTP from Postman with single quotes\",\r\n    \"content\": \"Good luck\",\r\n    \"is_completed\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/todos-api-rest-php/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"todos-api-rest-php",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/todos-api-rest-php/?id=3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/todos-api-rest-php/?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"todos-api-rest-php",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/todos-api-rest-php/?id=3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"titulo\": \"postman api post\",\r\n\"ciudad\": \"surrrrrrrrrr\",\r\n\"tipo\": \"comida\",\r\n\"fecha\": \"2021-12-03\",\r\n\"precio\": \"1\",\r\n\"usuario\": \"ifp\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/todos-api-rest-php/?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"todos-api-rest-php",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
