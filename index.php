@@ -8,4 +8,7 @@ switch ($request) {
   case 'GET':
     Todo::findAll();
     break;
+  case 'POST':
+    Todo::create();
+    break;
 }

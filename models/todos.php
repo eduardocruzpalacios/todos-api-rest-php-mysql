@@ -5,6 +5,33 @@ require_once 'db.php';
 class Todo
 {
 
+  public static function create()
+  {
+    $todo = json_decode(file_get_contents('php://input'), true);
+
+    global $connection;
+
+    $query  = 'INSERT INTO todos (id, title, content, is_completed)  
+    VALUES (NULL, ?, ?, ?)';
+
+    $stmt = $connection->prepare($query);
+
+    $stmt->bind_param(
+      'ssi',
+      $todo['title'],
+      $todo['content'],
+      $todo['is_completed']
+    );
+
+    $result = $stmt->execute();
+
+    if ($result) {
+      header('HTTP/1.1 200 OK');
+    } else {
+      header('HTTP/1.1 500 Internal Server Error');
+    }
+  }
+
   public static function findAll()
   {
     global $connection;
