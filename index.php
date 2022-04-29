@@ -11,4 +11,7 @@ switch ($request) {
   case 'POST':
     Todo::create();
     break;
+  case 'DELETE':
+    Todo::delete($_GET['id']);
+    break;
 }

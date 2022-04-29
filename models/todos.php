@@ -54,4 +54,23 @@ class Todo
 
     return $todos;
   }
+
+  public static function delete($id)
+  {
+    global $connection;
+
+    $query  = 'DELETE FROM todos WHERE id = ?';
+
+    $stmt = $connection->prepare($query);
+
+    $stmt->bind_param('i', $id);
+
+    $result = $stmt->execute();
+
+    if ($result) {
+      header('HTTP/1.1 200 OK');
+    } else {
+      header('HTTP/1.1 500 Internal Server Error');
+    }
+  }
 }
